@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelf Submission</title>
+    <link rel="stylesheet" href="Assets/Style/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title-bar">
+        <h1>BOOKSHELF</h1>
+      </div>
+      <form class="search-bar" id="search-form">
+        <input type="text" placeholder="Search Books" id="search" />
+        <button id="submit-search" type="submit">
+          <img src="Assets/icon/search-icon.svg" alt="search" />
+        </button>
+      </form>
+    </header>
+    <main>
+      <div class="add-book-container">
+        <div class="title-add">
+          <h1>Masukkan Buku Baru</h1>
+          <img id="book-logo" src="Assets/icon/book-icon.svg" alt="book-icon" />
+        </div>
+        <div class="add-book">
+          <button class="show-book-btn" id="showBookBtn">
+            Masukan Buku ke rak <b>Belum Dibaca</b>
+          </button>
+        </div>
+      </div>
+      <div class="book-list-container">
+        <div class="belum-dibaca">
+          <h1>Belum selesai dibaca</h1>
+          <div class="list-book" id="book-belum-dibaca"></div>
+        </div>
+        <div class="sudah-dibaca">
+          <h1>Sudah selesai dibaca</h1>
+          <div class="list-book" id="book-sudah-dibaca"></div>
+        </div>
+      </div>
+
+      <div class="overlay" id="divOne">
+        <div class="wrapper">
+          <h2>Masukan Buku Baru</h2>
+          <a class="close" id="close" href="#">&times;</a>
+          <div class="content">
+            <div class="container">
+              <form id="form">
+                <label>Judul</label>
+                <input
+                  placeholder="Judul Buku"
+                  type="text"
+                  id="judul"
+                  required
+                />
+                <label>Penulis</label>
+                <input
+                  placeholder="Penulis Buku"
+                  type="text"
+                  id="penulis"
+                  required
+                />
+                <label>Tahun</label>
+                <input
+                  placeholder="Tahun Terbit"
+                  type="number"
+                  id="tahun"
+                  pattern="/^-?\d+\.?\d*$/"
+                  onKeyPress="if(this.value.length==4) return false;"
+                  required
+                />
+                <div class="dibaca">
+                  <label>Selesai dibaca?</label>
+                  <input placeholder="Dibaca?" type="checkbox" id="dibaca" />
+                </div>
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay" id="editBookModal">
+        <div class="wrapper">
+          <h2>Edit Data Buku</h2>
+          <a class="close" id="closeEditBook" href="#">&times;</a>
+          <div class="content">
+            <div class="container">
+              <form id="editForm">
+                <label>Judul</label>
+                <input
+                  placeholder="Judul Buku"
+                  type="text"
+                  id="editJudul"
+                  required
+                />
+                <label>Penulis</label>
+                <input
+                  placeholder="Penulis Buku"
+                  type="text"
+                  id="editPenulis"
+                  required
+                />
+                <label>Tahun</label>
+                <input
+                  placeholder="Tahun Terbit"
+                  type="number"
+                  id="editTahun"
+                  pattern="/^-?\d+\.?\d*$/"
+                  onKeyPress="if(this.value.length==4) return false;"
+                  required
+                />
+                <div class="dibaca">
+                  <label>Selesai dibaca?</label>
+                  <input
+                    placeholder="Dibaca?"
+                    type="checkbox"
+                    id="editDibaca"
+                  />
+                </div>
+
+                <input type="submit" value="Update" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="overlay-delete" id="deleteModal">
+      <div class="delete-modal">
+        <div class="title-dialog">
+          <h2>Apakah anda yakin ingin menghapus Buku ini?</h2>
+        </div>
+        <div class="button-delete-container">
+          <button id="tidak">TIDAK</button>
+          <button id="ya">YA</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright ❤️ 2024 Ali Purnama alam</p>
+    </footer>
+  </body>
+  <script src="Assets/JS/script.js"></script>
+</html>
